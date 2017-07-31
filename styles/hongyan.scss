@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/*! lixinjie 20170731 github.com/xinjie-just/hongyan.git */
+@import "variables";
+@import "reboot";
+
+/*首页*/
+/*头部*/
+#header {
+  @include center-content();
+  $height: 90px;
+  $size: 25px;
+  height: $height;
+  padding-top: $size;
+  padding-bottom: $size;
+  .logo {
+    @extend %fl;
+    width: 157px;
+    height: $height - 2 * $size;
+  }
+  #nav {
+    @extend %fr;
+    ul {
+      @extend .clearfix;
+      li {
+        @extend %fl;
+        a {
+          display: block;
+          padding-right: 1.5em;
+          padding-left: 1.5em;
+          height: $height - 2 * $size;
+          border-bottom: 2px solid transparent;
+          line-height:  $height - 2 * $size - 2;
+          font-size: $font-size;
+          &.active,
+          &:hover {
+            border-bottom-color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+/*banner*/
+
+/*主要内容*/
+.section-bg {
+  @extend %page-width;
+  &:nth-of-type(2n + 1) {
+    background-color: #fff;
+  }
+  &:nth-of-type(2n + 2) {
+    background-color: #f9f9f9;
+  }
+}
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @include center-content();
+}
