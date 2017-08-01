@@ -41,19 +41,263 @@
   }
 }
 /*banner*/
+.carousel-indicators li {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+  &.active {
+    width: 8px;
+    height: 8px;
+    background-color: #1b95df;
+    margin: 1px;
+    border-radius: 8px;
+    border-color: #1b95df;
+  }
+}
 
 /*主要内容*/
 .section-bg {
   @extend %page-width;
-  &:nth-of-type(2n + 1) {
+  &:nth-of-type(2n + 2) {
     background-color: #fff;
   }
-  &:nth-of-type(2n + 2) {
+  &:nth-of-type(2n + 1) {
     background-color: #f9f9f9;
   }
 }
 section {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  @include center-content();
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include center-content(1060px);
+  h2 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    &:before,
+    &:after{
+      content: "";
+      position: absolute;
+      top: 50%;
+      height: 3px;
+      background-color: #d4d4d4;
+      transform: translateY(-50%);
+    }
+    &:before {
+      left: 0;
+    }
+    &:after {
+      right: 0;
+    }
+    span {
+      display: inline-block;
+      &.cn {
+        font-size: $font-size + 8;
+        color: $text-color;
+      }
+      &.en {
+        font-size: $font-size + 2;
+        color: $main-color;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+section.about-us {
+  h2 {
+    &:before,
+    &:after {
+      width: calc((100% - 140px) / 2);
+    }
+  }
+  .content {
+    @extend .clearfix;
+    margin-top: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+    .img {
+      @extend %fl;
+      text-align: right;
+      .heading {
+        display: inline-block;
+        padding: 64px 16px 16px 30px;
+        background-color: $main-color;
+        span {
+          display: block;
+          text-align: right;
+          color: #ffede0;
+          &.cn {
+            font-size: $font-size + 14;
+          }
+          &.en {
+            font-size: $font-size + 2;
+            text-transform: uppercase;
+          }
+        }
+      }
+      img {
+        display: block;
+        margin-top: 2px;
+      }
+    }
+    .text {
+      @extend %fr;
+      width: 578px;
+      p {
+        font-size: $font-size - 2;
+        color: $text-color;
+        line-height: 24px;
+        margin-bottom: 12px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+      .contact {
+        margin-top: 27px;
+        span {
+          font-size: $font-size - 2;
+          color: $text-color;
+          margin-right: 40px;
+          i {
+            font-size: $font-size + 2;
+            margin-right: 10px;
+            color: #28aaf8;
+          }
+          a {
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+}
+section.our-advantage {
+  h2 {
+    &:before,
+    &:after {
+      width: calc((100% - 200px) / 2);
+    }
+  }
+  .advantage {
+    margin-top: 30px;
+    margin-left: 270px;
+    li {
+      height: 30px;
+      line-height: 30px;
+      position: relative;
+      margin-bottom: 10px;
+      padding-left: 42px;
+      color: $text-color;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      &:before {
+        //content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        color: #fff;
+      }
+      &:nth-of-type(even):before {
+        background-color: #0b8bd9;
+      }
+      &:nth-of-type(odd):before {
+        background-color: #28aaf8;
+      }
+      @for $i from 1 through 6 {
+        &:nth-of-type(#{$i}):before {
+          content: "#{$i}";
+        }
+      }
+    }
+  }
+  .heading {
+    margin-top: 50px;
+    text-align: center;
+    span {
+      display: inline-block;
+      &.cn {
+        font-size: $font-size + 8;
+        color: $text-color;
+      }
+      &.en {
+        font-size: $font-size + 2;
+        color: #ff6a00;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .process {
+    margin-top: 40px;
+    @extend .clearfix;
+    li {
+      @extend %fl;
+      $size: 82px;
+      width: 25%;
+      padding: 98px calc((25% - 98px) / 2) 0;
+      font-size: $font-size;
+      color: $text-color;
+      line-height: 1.5;
+      text-align: center;
+      background-position: center top;
+      background-repeat: no-repeat;
+      &:nth-of-type(1) {
+        background-image: url("../images/protocol.png");
+      }
+      &:nth-of-type(2) {
+        background-image: url("../images/audit.png");
+      }
+      &:nth-of-type(3) {
+        background-image: url("../images/write.png");
+      }
+      &:nth-of-type(4) {
+        background-image: url("../images/install.png");
+      }
+    }
+  }
+  .handle {
+    text-align: center;
+    a {
+      display: inline-block;
+      margin: 16px auto 0;
+      border: 1px solid #666;
+      border-radius: 4px;
+      font-size: $font-size;
+      color: $text-color;
+      padding: 5px 14px;
+      &:hover {
+        color: $main-color;
+        border-color: $main-color;
+      }
+    }
+  }
+}
+section.about-us {
+  h2 {
+    &:before,
+    &:after {
+      width: calc((100% - 140px) / 2);
+    }
+  }
+}
+section.about-us {
+  h2 {
+    &:before,
+    &:after {
+      width: calc((100% - 140px) / 2);
+    }
+  }
+}
+section.about-us {
+  h2 {
+    &:before,
+    &:after {
+      width: calc((100% - 140px) / 2);
+    }
+  }
 }
