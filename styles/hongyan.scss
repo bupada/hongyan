@@ -111,7 +111,7 @@ section.about-us {
   h2 {
     &:before,
     &:after {
-      width: calc((100% - 140px) / 2);
+      width: calc((100% - 170px) / 2);
     }
   }
   .content {
@@ -198,7 +198,6 @@ section.our-advantage {
         margin-bottom: 0;
       }
       &:before {
-        //content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -222,7 +221,7 @@ section.our-advantage {
       }
     }
   }
-  .heading {
+  h3.heading {
     margin-top: 50px;
     text-align: center;
     span {
@@ -243,9 +242,8 @@ section.our-advantage {
     @extend .clearfix;
     li {
       @extend %fl;
-      $size: 82px;
       width: 25%;
-      padding: 98px calc((25% - 98px) / 2) 0;
+      padding: 98px calc((25% - 82px) / 2) 0;
       font-size: $font-size;
       color: $text-color;
       line-height: 1.5;
@@ -287,10 +285,203 @@ section.our-advantage {
 
 /*产品推荐*/
 section.products {
+  @include center-content(1200px);
   h2 {
+    @include center-content(1060px);
     &:before,
     &:after {
-      width: calc((100% - 140px) / 2);
+      width: calc((100% - 170px) / 2);
+    }
+  }
+  .content {
+    margin-top: 60px;
+    @include center-content(1200px);
+    height: 480px;
+    position: relative;
+    .home-solution {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 480px;
+      height: 480px;
+      img {
+        display: block;
+        width: 480px;
+        height: 480px;
+      }
+      .intro {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-color: #ff8256;
+        color: #fff;
+        padding: 14px 20px;
+        .heading {
+          line-height: 22px;
+          @extend .clearfix;
+          h4 {
+            @extend %fl;
+            @extend %ellipsis;
+            font-size: $font-size + 2;
+            width: calc(100% - 100px);
+          }
+          a {
+            display: block;
+            @extend %fr;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            width: 50px;
+            height: 22px;
+            line-height: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: $font-size - 2;
+            &:hover {
+              color: darken(#fff, 8%);
+              border-color: darken(#fff, 8%);
+            }
+          }
+        }
+        p {
+          font-size: $font-size - 2;
+          line-height: 20px;
+          margin-top: 8px;
+          max-height: 40px;
+          overflow: hidden;
+        }
+      }
+    }
+    .home-product {
+      z-index: 20;
+      .intro {
+        z-index: 22;
+        width: 240px;
+        height: 240px;
+        color: #fff;
+        padding: 30px 20px;
+        &:after {
+          width: 0;
+          height: 0;
+        }
+        h4 {
+          font-size: $font-size + 2;
+          @extend %ellipsis;
+          margin-bottom: 14px;
+        }
+        p {
+          font-size: $font-size - 2;
+          line-height: 24px;
+          height: 120px;
+          overflow: hidden;
+        }
+      }
+      figure {
+        z-index: 21;
+        position: absolute;
+        width: 240px;
+        height: 240px;
+        background-color: #fafafa;
+        padding: 6px 43px;
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    .product2 {
+      $bgc: #3cb6d5;
+      position: absolute;
+      top: 0;
+      left: 480px;
+      width: 480px;
+      height: 240px;
+      .intro {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $bgc;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: -16px;
+          transform: translateY(-50%);
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-left: 16px solid $bgc;
+        }
+      }
+      figure {
+        position: absolute;
+        top: 0;
+        left: 240px;
+      }
+    }
+    .product3 {
+      $bgc: #29b073;
+      position: absolute;
+      bottom: 0;
+      left: 480px;
+      width: 480px;
+      height: 240px;
+      .intro {
+        position: absolute;
+        top: 0;
+        left: 240px;
+        background-color: $bgc;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -16px;
+          transform: translateY(-50%);
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-right: 16px solid $bgc;
+        }
+      }
+      figure {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    .product4 {
+      $bgc: #f1b400;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 240px;
+      height: 480px;
+      .intro {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $bgc;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: -16px;
+          transform: translateX(-50%);
+          border-top: 16px solid $bgc;
+          border-right: 10px solid transparent;
+          border-left: 10px solid transparent;
+        }
+      }
+      figure {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
     }
   }
 }
@@ -300,7 +491,7 @@ section.news {
   h2 {
     &:before,
     &:after {
-      width: calc((100% - 140px) / 2);
+      width: calc((100% - 180px) / 2);
     }
   }
   .content {
@@ -314,7 +505,15 @@ section.news {
           overflow: hidden;
           margin-top: 10px;
           a {
-              display: block;
+            display: block;
+            &:hover {
+              img {
+                opacity: .8;
+              }
+              span {
+                color: darken(#fff, 9%);
+              }
+            }
           }
           img {
               display: block;
@@ -382,4 +581,38 @@ section.news {
         color: #fff;
         line-height: 1.6;
     }
+}
+.others {
+  z-index: 9999;
+  position: fixed;
+  right: 60px;
+  bottom: 250px;
+  > a {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    &.qq {
+      top: 0;
+      left: 0;
+      background-color: #18acfc;
+    }
+    &.totop {
+      top: 44px;
+      left: 0;
+      display: none;
+      background-color: #1b95df;
+    }
+    i {
+      font-size: 24px;
+      color: #fff;
+      &:hover {
+        color: darken(#fff, 9%);
+      }
+    }
+
+  }
 }

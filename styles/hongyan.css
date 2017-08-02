@@ -257,16 +257,16 @@ ul {
   list-style-type: none; }
 
 /* ===关于浮动=== */
-#header .logo, #header #nav ul li, section.about-us .content .img, section.our-advantage .process li, section.news .content .news-recommend, section.news .content ul li a {
+#header .logo, #header #nav ul li, section.about-us .content .img, section.our-advantage .process li, section.products .content .home-solution .intro .heading h4, section.news .content .news-recommend, section.news .content ul li a {
   float: left; }
 
-#header #nav, section.about-us .content .text, section.news .content ul, section.news .content ul li time {
+#header #nav, section.about-us .content .text, section.products .content .home-solution .intro .heading a, section.news .content ul, section.news .content ul li time {
   float: right; }
 
-.clearfix:before, #header #nav ul:before, section.about-us .content:before, section.our-advantage .process:before, section.news .content:before, section.news .content ul li:before {
+.clearfix:before, #header #nav ul:before, section.about-us .content:before, section.our-advantage .process:before, section.products .content .home-solution .intro .heading:before, section.news .content:before, section.news .content ul li:before {
   content: "";
   display: table; }
-.clearfix:after, #header #nav ul:after, section.about-us .content:after, section.our-advantage .process:after, section.news .content:after, section.news .content ul li:after {
+.clearfix:after, #header #nav ul:after, section.about-us .content:after, section.our-advantage .process:after, section.products .content .home-solution .intro .heading:after, section.news .content:after, section.news .content ul li:after {
   content: "";
   display: table;
   clear: both; }
@@ -289,7 +289,7 @@ label {
   label:hover {
     opacity: .8; }
 
-section.news .content .news-recommend span, section.news .content ul li a {
+section.products .content .home-solution .intro .heading h4, section.products .content .home-product .intro h4, section.news .content .news-recommend span, section.news .content ul li a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
@@ -385,7 +385,7 @@ section {
 
 /*关于我们*/
 section.about-us h2:before, section.about-us h2:after {
-  width: calc((100% - 140px) / 2); }
+  width: calc((100% - 170px) / 2); }
 section.about-us .content {
   margin-top: 40px;
   padding-right: 40px;
@@ -471,15 +471,15 @@ section.our-advantage .advantage {
       content: "5"; }
     section.our-advantage .advantage li:nth-of-type(6):before {
       content: "6"; }
-section.our-advantage .heading {
+section.our-advantage h3.heading {
   margin-top: 50px;
   text-align: center; }
-  section.our-advantage .heading span {
+  section.our-advantage h3.heading span {
     display: inline-block; }
-    section.our-advantage .heading span.cn {
+    section.our-advantage h3.heading span.cn {
       font-size: 24px;
       color: #333; }
-    section.our-advantage .heading span.en {
+    section.our-advantage h3.heading span.en {
       font-size: 18px;
       color: #ff6a00;
       text-transform: uppercase; }
@@ -487,7 +487,7 @@ section.our-advantage .process {
   margin-top: 40px; }
   section.our-advantage .process li {
     width: 25%;
-    padding: 98px calc((25% - 98px) / 2) 0;
+    padding: 98px calc((25% - 82px) / 2) 0;
     font-size: 16px;
     color: #333;
     line-height: 1.5;
@@ -515,12 +515,180 @@ section.our-advantage .handle {
       border-color: #ff6a00; }
 
 /*产品推荐*/
-section.products h2:before, section.products h2:after {
-  width: calc((100% - 140px) / 2); }
+section.products {
+  display: block;
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto; }
+  section.products h2 {
+    display: block;
+    width: 1060px;
+    margin-right: auto;
+    margin-left: auto; }
+    section.products h2:before, section.products h2:after {
+      width: calc((100% - 170px) / 2); }
+  section.products .content {
+    margin-top: 60px;
+    display: block;
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 480px;
+    position: relative; }
+    section.products .content .home-solution {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 480px;
+      height: 480px; }
+      section.products .content .home-solution img {
+        display: block;
+        width: 480px;
+        height: 480px; }
+      section.products .content .home-solution .intro {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-color: #ff8256;
+        color: #fff;
+        padding: 14px 20px; }
+        section.products .content .home-solution .intro .heading {
+          line-height: 22px; }
+          section.products .content .home-solution .intro .heading h4 {
+            font-size: 18px;
+            width: calc(100% - 100px); }
+          section.products .content .home-solution .intro .heading a {
+            display: block;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            width: 50px;
+            height: 22px;
+            line-height: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 14px; }
+            section.products .content .home-solution .intro .heading a:hover {
+              color: #ebebeb;
+              border-color: #ebebeb; }
+        section.products .content .home-solution .intro p {
+          font-size: 14px;
+          line-height: 20px;
+          margin-top: 8px;
+          max-height: 40px;
+          overflow: hidden; }
+    section.products .content .home-product {
+      z-index: 20; }
+      section.products .content .home-product .intro {
+        z-index: 22;
+        width: 240px;
+        height: 240px;
+        color: #fff;
+        padding: 30px 20px; }
+        section.products .content .home-product .intro:after {
+          width: 0;
+          height: 0; }
+        section.products .content .home-product .intro h4 {
+          font-size: 18px;
+          margin-bottom: 14px; }
+        section.products .content .home-product .intro p {
+          font-size: 14px;
+          line-height: 24px;
+          height: 120px;
+          overflow: hidden; }
+      section.products .content .home-product figure {
+        z-index: 21;
+        position: absolute;
+        width: 240px;
+        height: 240px;
+        background-color: #fafafa;
+        padding: 6px 43px; }
+        section.products .content .home-product figure img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+    section.products .content .product2 {
+      position: absolute;
+      top: 0;
+      left: 480px;
+      width: 480px;
+      height: 240px; }
+      section.products .content .product2 .intro {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #3cb6d5; }
+        section.products .content .product2 .intro:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: -16px;
+          transform: translateY(-50%);
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-left: 16px solid #3cb6d5; }
+      section.products .content .product2 figure {
+        position: absolute;
+        top: 0;
+        left: 240px; }
+    section.products .content .product3 {
+      position: absolute;
+      bottom: 0;
+      left: 480px;
+      width: 480px;
+      height: 240px; }
+      section.products .content .product3 .intro {
+        position: absolute;
+        top: 0;
+        left: 240px;
+        background-color: #29b073; }
+        section.products .content .product3 .intro:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -16px;
+          transform: translateY(-50%);
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-right: 16px solid #29b073; }
+      section.products .content .product3 figure {
+        position: absolute;
+        top: 0;
+        left: 0; }
+    section.products .content .product4 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 240px;
+      height: 480px; }
+      section.products .content .product4 .intro {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #f1b400; }
+        section.products .content .product4 .intro:after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: -16px;
+          transform: translateX(-50%);
+          border-top: 16px solid #f1b400;
+          border-right: 10px solid transparent;
+          border-left: 10px solid transparent; }
+      section.products .content .product4 figure {
+        position: absolute;
+        bottom: 0;
+        left: 0; }
 
 /*新闻动态*/
 section.news h2:before, section.news h2:after {
-  width: calc((100% - 140px) / 2); }
+  width: calc((100% - 180px) / 2); }
 section.news .content {
   margin-top: 40px; }
   section.news .content .news-recommend {
@@ -531,6 +699,10 @@ section.news .content {
     margin-top: 10px; }
     section.news .content .news-recommend a {
       display: block; }
+      section.news .content .news-recommend a:hover img {
+        opacity: .8; }
+      section.news .content .news-recommend a:hover span {
+        color: #e8e8e8; }
     section.news .content .news-recommend img {
       display: block;
       width: 400px;
@@ -580,5 +752,33 @@ section.news .content {
     font-size: 14px;
     color: #fff;
     line-height: 1.6; }
+
+.others {
+  z-index: 9999;
+  position: fixed;
+  right: 60px;
+  bottom: 250px; }
+  .others > a {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%; }
+    .others > a.qq {
+      top: 0;
+      left: 0;
+      background-color: #18acfc; }
+    .others > a.totop {
+      top: 44px;
+      left: 0;
+      display: none;
+      background-color: #1b95df; }
+    .others > a i {
+      font-size: 24px;
+      color: #fff; }
+      .others > a i:hover {
+        color: #e8e8e8; }
 
 /*# sourceMappingURL=hongyan.css.map */
