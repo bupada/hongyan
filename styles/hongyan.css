@@ -58,7 +58,7 @@ html {
 *, *:before, *:after {
   box-sizing: border-box; }
 
-body, .section-bg {
+body, .section-bg, #footer {
   width: 100%;
   max-width: 1920px;
   margin-right: auto;
@@ -257,16 +257,16 @@ ul {
   list-style-type: none; }
 
 /* ===关于浮动=== */
-#header .logo, #header #nav ul li, section.about-us .content .img, section.our-advantage .process li {
+#header .logo, #header #nav ul li, section.about-us .content .img, section.our-advantage .process li, section.news .content .news-recommend, section.news .content ul li a {
   float: left; }
 
-#header #nav, section.about-us .content .text {
+#header #nav, section.about-us .content .text, section.news .content ul, section.news .content ul li time {
   float: right; }
 
-.clearfix:before, #header #nav ul:before, section.about-us .content:before, section.our-advantage .process:before {
+.clearfix:before, #header #nav ul:before, section.about-us .content:before, section.our-advantage .process:before, section.news .content:before, section.news .content ul li:before {
   content: "";
   display: table; }
-.clearfix:after, #header #nav ul:after, section.about-us .content:after, section.our-advantage .process:after {
+.clearfix:after, #header #nav ul:after, section.about-us .content:after, section.our-advantage .process:after, section.news .content:after, section.news .content ul li:after {
   content: "";
   display: table;
   clear: both; }
@@ -288,6 +288,11 @@ label {
   cursor: pointer; }
   label:hover {
     opacity: .8; }
+
+section.news .content .news-recommend span, section.news .content ul li a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
 
 /*validate错误提示*/
 label.error {
@@ -315,8 +320,10 @@ label.error {
     height: 40px; }
   #header #nav ul li a {
     display: block;
-    padding-right: 1.5em;
-    padding-left: 1.5em;
+    padding-right: .5em;
+    padding-left: .5em;
+    margin-right: 1em;
+    margin-left: 1em;
     height: 40px;
     border-bottom: 2px solid transparent;
     line-height: 38px;
@@ -376,6 +383,7 @@ section {
         color: #ff6a00;
         text-transform: uppercase; }
 
+/*关于我们*/
 section.about-us h2:before, section.about-us h2:after {
   width: calc((100% - 140px) / 2); }
 section.about-us .content {
@@ -422,6 +430,7 @@ section.about-us .content {
         section.about-us .content .text .contact span a {
           color: #333; }
 
+/*我们的优势*/
 section.our-advantage h2:before, section.our-advantage h2:after {
   width: calc((100% - 200px) / 2); }
 section.our-advantage .advantage {
@@ -482,17 +491,15 @@ section.our-advantage .process {
     font-size: 16px;
     color: #333;
     line-height: 1.5;
-    text-align: center;
-    background-position: center top;
-    background-repeat: no-repeat; }
+    text-align: center; }
     section.our-advantage .process li:nth-of-type(1) {
-      background-image: url("../images/protocol.png"); }
+      background: url("../images/protocol.png") no-repeat center top, url("../images/next-step.png") no-repeat right top 30px; }
     section.our-advantage .process li:nth-of-type(2) {
-      background-image: url("../images/audit.png"); }
+      background: url("../images/audit.png") no-repeat center top, url("../images/next-step.png") no-repeat right top 30px; }
     section.our-advantage .process li:nth-of-type(3) {
-      background-image: url("../images/write.png"); }
+      background: url("../images/write.png") no-repeat center top, url("../images/next-step.png") no-repeat right top 30px; }
     section.our-advantage .process li:nth-of-type(4) {
-      background-image: url("../images/install.png"); }
+      background: url("../images/install.png") no-repeat center top; }
 section.our-advantage .handle {
   text-align: center; }
   section.our-advantage .handle a {
@@ -507,13 +514,71 @@ section.our-advantage .handle {
       color: #ff6a00;
       border-color: #ff6a00; }
 
-section.about-us h2:before, section.about-us h2:after {
+/*产品推荐*/
+section.products h2:before, section.products h2:after {
   width: calc((100% - 140px) / 2); }
 
-section.about-us h2:before, section.about-us h2:after {
+/*新闻动态*/
+section.news h2:before, section.news h2:after {
   width: calc((100% - 140px) / 2); }
+section.news .content {
+  margin-top: 40px; }
+  section.news .content .news-recommend {
+    width: 400px;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px; }
+    section.news .content .news-recommend a {
+      display: block; }
+    section.news .content .news-recommend img {
+      display: block;
+      width: 400px;
+      height: 220px; }
+    section.news .content .news-recommend span {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      display: block;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 13px 20px; }
+  section.news .content ul {
+    width: 610px; }
+    section.news .content ul li {
+      line-height: 34px;
+      color: #333;
+      font-size: 14px; }
+      section.news .content ul li a {
+        position: relative;
+        display: block;
+        width: 460px;
+        padding-left: 20px; }
+        section.news .content ul li a:hover {
+          color: #ff6a00; }
+        section.news .content ul li a:before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 4px;
+          height: 4px;
+          background: #28aaf8; }
 
-section.about-us h2:before, section.about-us h2:after {
-  width: calc((100% - 140px) / 2); }
+/*底部*/
+#footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #999; }
+  #footer small {
+    display: block;
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.6; }
 
 /*# sourceMappingURL=hongyan.css.map */

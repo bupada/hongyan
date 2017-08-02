@@ -25,8 +25,10 @@
         @extend %fl;
         a {
           display: block;
-          padding-right: 1.5em;
-          padding-left: 1.5em;
+          padding-right: .5em;
+          padding-left: .5em;
+          margin-right: 1em;
+          margin-left: 1em;
           height: $height - 2 * $size;
           border-bottom: 2px solid transparent;
           line-height:  $height - 2 * $size - 2;
@@ -103,6 +105,8 @@ section {
     }
   }
 }
+
+/*关于我们*/
 section.about-us {
   h2 {
     &:before,
@@ -171,6 +175,8 @@ section.about-us {
     }
   }
 }
+
+/*我们的优势*/
 section.our-advantage {
   h2 {
     &:before,
@@ -244,19 +250,20 @@ section.our-advantage {
       color: $text-color;
       line-height: 1.5;
       text-align: center;
-      background-position: center top;
-      background-repeat: no-repeat;
       &:nth-of-type(1) {
-        background-image: url("../images/protocol.png");
+        background: url("../images/protocol.png") no-repeat center top,
+                    url("../images/next-step.png") no-repeat right top 30px;
       }
       &:nth-of-type(2) {
-        background-image: url("../images/audit.png");
+        background: url("../images/audit.png") no-repeat center top,
+                    url("../images/next-step.png") no-repeat right top 30px;
       }
       &:nth-of-type(3) {
-        background-image: url("../images/write.png");
+        background: url("../images/write.png") no-repeat center top,
+                    url("../images/next-step.png") no-repeat right top 30px;
       }
       &:nth-of-type(4) {
-        background-image: url("../images/install.png");
+        background: url("../images/install.png") no-repeat center top;
       }
     }
   }
@@ -277,7 +284,9 @@ section.our-advantage {
     }
   }
 }
-section.about-us {
+
+/*产品推荐*/
+section.products {
   h2 {
     &:before,
     &:after {
@@ -285,19 +294,92 @@ section.about-us {
     }
   }
 }
-section.about-us {
+
+/*新闻动态*/
+section.news {
   h2 {
     &:before,
     &:after {
       width: calc((100% - 140px) / 2);
     }
+  }
+  .content {
+      margin-top: 40px;
+      @extend .clearfix;
+      .news-recommend {
+          @extend %fl;
+          width: 400px;
+          height: 220px;
+          position: relative;
+          overflow: hidden;
+          margin-top: 10px;
+          a {
+              display: block;
+          }
+          img {
+              display: block;
+              width: 400px;
+              height: 220px;
+          }
+          span {
+              position: absolute;
+              width: 100%;
+              bottom: 0;
+              display: block;
+              background-color: rgba(0, 0, 0, .6);
+              color: #fff;
+              padding: 13px 20px;
+              @extend %ellipsis;
+          }
+      }
+      ul {
+          @extend %fr;
+          width: 610px;
+          li {
+              @extend .clearfix;
+              line-height: 34px;
+              color: $text-color;
+              font-size: $font-size - 2;
+              a {
+                  @extend %fl;
+                  @extend %ellipsis;
+                  position: relative;
+                  display: block;
+                  width: 460px;
+                  padding-left: 20px;
+                  &:hover {
+                      color: $main-color;
+                  }
+                  &:before {
+                      content: "";
+                      position: absolute;
+                      top: 50%;
+                      left: 0;
+                      transform: translateY(-50%);
+                      width: 4px;
+                      height: 4px;
+                      background: #28aaf8;
+                  }
+              }
+              time {
+                @extend %fr;
+              }
+          }
+      }
   }
 }
-section.about-us {
-  h2 {
-    &:before,
-    &:after {
-      width: calc((100% - 140px) / 2);
+
+/*底部*/
+#footer {
+    @extend %page-width;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #999;
+    small {
+        @include center-content();
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        line-height: 1.6;
     }
-  }
 }
