@@ -289,7 +289,7 @@ label {
   label:hover {
     opacity: .8; }
 
-section.products .content .home-solution .intro .heading h4, section.products .content .home-product .intro h4, section.news .content .news-recommend span, section.news .content ul li a, .sidebar-right .news-list li .heading a, .sidebar-right article .heading h3 {
+section.products .content .home-solution .intro .heading h4, section.products .content .home-product .intro h4, section.news .content .news-recommend span, section.news .content ul li a, .sidebar-right .news-list li .heading a, .sidebar-right article .heading h3, .products-list li h4 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
@@ -417,18 +417,19 @@ section.about-us .content {
       margin-bottom: 12px; }
       section.about-us .content .text p:last-of-type {
         margin-bottom: 0; }
-    section.about-us .content .text .contact {
-      margin-top: 27px; }
-      section.about-us .content .text .contact span {
-        font-size: 14px;
-        color: #333;
-        margin-right: 40px; }
-        section.about-us .content .text .contact span i {
-          font-size: 18px;
-          margin-right: 10px;
-          color: #28aaf8; }
-        section.about-us .content .text .contact span a {
-          color: #333; }
+
+.contact {
+  margin-top: 27px; }
+  .contact span {
+    font-size: 14px;
+    color: #333;
+    margin-right: 40px; }
+    .contact span i {
+      font-size: 18px;
+      margin-right: 10px;
+      color: #28aaf8; }
+    .contact span a {
+      color: #333; }
 
 /*我们的优势*/
 section.our-advantage h2:before, section.our-advantage h2:after {
@@ -1166,7 +1167,10 @@ section.news .content {
 
 /*===新闻详情===*/
 .sidebar-right article {
-  margin-top: 20px; }
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 26px;
+  color: #333; }
   .sidebar-right article .heading {
     height: 36px;
     line-height: 36px;
@@ -1182,33 +1186,75 @@ section.news .content {
       width: 100px;
       font-size: 16px;
       color: #666; }
-  .sidebar-right article .article-content {
-    padding-top: 10px;
-    font-size: 14px;
-    color: #333; }
-    .sidebar-right article .article-content img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 15px auto 0; }
-      .sidebar-right article .article-content img + img {
-        margin-top: 8px; }
-      .sidebar-right article .article-content img + p, .sidebar-right article .article-content img + div {
-        margin-top: 10px; }
-      .sidebar-right article .article-content img + div div,
-      .sidebar-right article .article-content img + div p {
-        margin-top: 5px; }
-    .sidebar-right article .article-content p,
-    .sidebar-right article .article-content div {
-      line-height: 26px;
-      word-wrap: break-word;
+  .sidebar-right article .article-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 15px auto 0; }
+    .sidebar-right article .article-content img + img {
+      margin-top: 8px; }
+    .sidebar-right article .article-content img + p, .sidebar-right article .article-content img + div {
       margin-top: 10px; }
-    .sidebar-right article .article-content div > p,
-    .sidebar-right article .article-content div > div {
+    .sidebar-right article .article-content img + div div,
+    .sidebar-right article .article-content img + div p {
       margin-top: 5px; }
+  .sidebar-right article .article-content p,
+  .sidebar-right article .article-content div {
+    line-height: 26px;
+    word-wrap: break-word;
+    margin-top: 10px; }
+  .sidebar-right article .article-content div > p,
+  .sidebar-right article .article-content div > div {
+    margin-top: 5px; }
 
 /*===产品展示===*/
 .products-list li {
-  width: calc((100% - 100px) / 2); }
+  width: calc((100% - 100px) / 2);
+  margin-bottom: 10px; }
+  .products-list li:nth-of-type(odd) {
+    margin-right: 100px; }
+  .products-list li a {
+    display: block;
+    width: 100%;
+    height: 100%; }
+    .products-list li a:hover figure {
+      border-color: #ff6a00; }
+    .products-list li a:hover h4 {
+      color: #ff6a00; }
+  .products-list li figure {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border: 1px solid transparent;
+    padding: 33px;
+    background-color: #fafafa; }
+    .products-list li figure img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block; }
+  .products-list li h4 {
+    text-align: center;
+    height: 56px;
+    line-height: 56px;
+    color: #333;
+    font-size: 16px; }
+
+/*===产品详情===*/
+h3.product-details {
+  color: #1b95df;
+  font-size: 16px; }
+
+.map {
+  margin-top: 20px;
+  width: 100%;
+  height: 300px; }
+  .map img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto; }
 
 /*# sourceMappingURL=hongyan.css.map */
