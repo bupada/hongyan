@@ -257,16 +257,16 @@ ul {
   list-style-type: none; }
 
 /* ===关于浮动=== */
-#header .logo, #header #nav ul li, section.about-us .content .img, section.our-advantage .process li, section.products .content .home-solution .intro .heading h4, section.news .content .news-recommend, section.news .content ul li a, .news-wrapper .sidebar-left, .sidebar-right article .heading h3 {
+#header .logo, #header #nav ul li, section.about-us .content .img, section.our-advantage .process li, section.products .content .home-solution .intro .heading h4, section.news .content .news-recommend, section.news .content ul li a, .content-wrapper .sidebar-left, .sidebar-right article .heading h3, .news-wrapper .sidebar-left, .products-list li {
   float: left; }
 
-#header #nav, section.about-us .content .text, section.products .content .home-solution .intro .heading a, section.news .content ul, section.news .content ul li time, .news-wrapper .sidebar-right, .sidebar-right article .heading time {
+#header #nav, section.about-us .content .text, section.products .content .home-solution .intro .heading a, section.news .content ul, section.news .content ul li time, .content-wrapper .sidebar-right, .sidebar-right article .heading time, .news-wrapper .sidebar-right {
   float: right; }
 
-.clearfix:before, #header #nav ul:before, section.about-us .content:before, section.our-advantage .process:before, section.products .content .home-solution .intro .heading:before, section.news .content:before, section.news .content ul li:before, .news-wrapper:before, .sidebar-right article .heading:before {
+#header #nav ul:before, section.about-us .content:before, section.our-advantage .process:before, section.products .content .home-solution .intro .heading:before, section.news .content:before, section.news .content ul li:before, .content-wrapper:before, .sidebar-right article .heading:before, .news-wrapper:before, .products-list:before {
   content: "";
   display: table; }
-.clearfix:after, #header #nav ul:after, section.about-us .content:after, section.our-advantage .process:after, section.products .content .home-solution .intro .heading:after, section.news .content:after, section.news .content ul li:after, .news-wrapper:after, .sidebar-right article .heading:after {
+#header #nav ul:after, section.about-us .content:after, section.our-advantage .process:after, section.products .content .home-solution .intro .heading:after, section.news .content:after, section.news .content ul li:after, .content-wrapper:after, .sidebar-right article .heading:after, .news-wrapper:after, .products-list:after {
   content: "";
   display: table;
   clear: both; }
@@ -790,17 +790,21 @@ section.news .content {
   margin-right: auto;
   margin-left: auto; }
 
-.news-wrapper {
+.content-wrapper {
   display: block;
   width: 1200px;
   margin-right: auto;
   margin-left: auto;
   margin-top: 40px;
   margin-bottom: 30px; }
-  .news-wrapper .sidebar-left {
+  .content-wrapper .sidebar-left {
     width: 220px; }
-  .news-wrapper .sidebar-right {
+  .content-wrapper .sidebar-right {
     width: 900px; }
+    .content-wrapper .sidebar-right > p {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 40px; }
 
 .sidebar-left h1 {
   width: 220px;
@@ -1202,5 +1206,9 @@ section.news .content {
     .sidebar-right article .article-content div > p,
     .sidebar-right article .article-content div > div {
       margin-top: 5px; }
+
+/*===产品展示===*/
+.products-list li {
+  width: calc((100% - 100px) / 2); }
 
 /*# sourceMappingURL=hongyan.css.map */

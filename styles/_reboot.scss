@@ -386,7 +386,7 @@ ul {
   float: right;
 }
 
-.clearfix {
+%clearfix {
   &:before {
     content: "";
     display: table;
