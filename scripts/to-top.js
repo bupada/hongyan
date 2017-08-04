@@ -10,6 +10,6 @@ $(window).scroll(function() {
     }
 });
 $("#toTop").on("click", function () {
-    $("html, body").animate({scrollTop: 0}, 300); /* 持续时间为 100ms */
+    $("html, body").animate({scrollTop: 0}, 300); /* 持续时间为 300ms */
     return false;
 });
