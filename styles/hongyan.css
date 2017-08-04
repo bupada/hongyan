@@ -992,4 +992,215 @@ section.news .content {
     .sidebar-right article .article-content img + div p {
       margin-top: 5px; }
 
+/*===新闻动态===*/
+/*banner*/
+.banner img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto; }
+
+.news-wrapper {
+  display: block;
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 40px;
+  margin-bottom: 30px; }
+  .news-wrapper .sidebar-left {
+    width: 220px; }
+  .news-wrapper .sidebar-right {
+    width: 900px; }
+
+.sidebar-left h1 {
+  width: 220px;
+  height: 62px;
+  line-height: 58px;
+  padding-left: 40px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #ff8000;
+  /*IE9*/
+  background-image: linear-gradient(-214deg, #ff8000 2%, #ff6a00 99%);
+  border-bottom: 4px solid #d4d4d4; }
+.sidebar-left ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 57px;
+  line-height: 56px;
+  border-bottom: 1px solid #d6d6d6;
+  color: #333;
+  padding-left: 40px; }
+  .sidebar-left ul li a.active, .sidebar-left ul li a:hover {
+    color: #ff6a00; }
+  .sidebar-left ul li a:before {
+    content: ">";
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    font-size: 12px;
+    transform: translateY(-50%); }
+
+/*面包屑导航*/
+.breadcrumbs {
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 20px; }
+  .breadcrumbs ol {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    line-height: 50px; }
+    .breadcrumbs ol li {
+      position: relative;
+      display: inline-block;
+      height: 50px;
+      line-height: 50px;
+      padding-left: 20px;
+      color: #333; }
+      .breadcrumbs ol li:first-child {
+        padding-left: 0; }
+      .breadcrumbs ol li:last-child {
+        padding-left: 25px; }
+        .breadcrumbs ol li:last-child:before {
+          content: ""; }
+      .breadcrumbs ol li:before {
+        content: ">";
+        position: absolute;
+        top: 0;
+        right: -18px; }
+      .breadcrumbs ol li a {
+        display: block;
+        color: #666;
+        padding-right: 5px;
+        padding-left: 5px; }
+        .breadcrumbs ol li a.icon-home {
+          font-size: 20px;
+          color: #999; }
+        .breadcrumbs ol li a:hover {
+          color: #ff6a00; }
+
+/*新闻列表*/
+.sidebar-right h2 {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px; }
+.sidebar-right .news-list li {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  border-bottom: 1px dotted #999; }
+  .sidebar-right .news-list li .heading {
+    position: relative;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 14px;
+    font-size: 0; }
+    .sidebar-right .news-list li .heading:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      background-color: #28aaf8; }
+    .sidebar-right .news-list li .heading a {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: calc(100% - 100px - 14px);
+      font-size: 16px;
+      color: #333;
+      padding-right: 20px; }
+      .sidebar-right .news-list li .heading a:hover {
+        color: #ff6a00; }
+    .sidebar-right .news-list li .heading time {
+      display: inline-block;
+      vertical-align: middle;
+      width: 100px;
+      font-size: 16px;
+      color: #666; }
+  .sidebar-right .news-list li p {
+    font-size: 14px;
+    line-height: 26px;
+    max-height: 52px;
+    overflow: hidden; }
+
+/*分页*/
+.pagination-wrapper {
+  text-align: center;
+  margin-top: 30px; }
+
+.pagination {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0; }
+  .pagination > li > a,
+  .pagination > li > span {
+    color: #333;
+    border-color: #d4d4d4;
+    background-color: #fff; }
+    .pagination > li > a:focus, .pagination > li > a:hover,
+    .pagination > li > span:focus,
+    .pagination > li > span:hover {
+      color: #fff;
+      border-color: #ff6a00;
+      background-color: #ff6a00; }
+  .pagination > .active > a,
+  .pagination > .active > a:focus,
+  .pagination > .active > a:hover,
+  .pagination > .active > span,
+  .pagination > .active > span:focus,
+  .pagination > .active > span:hover {
+    color: #fff;
+    border-color: #ff6a00;
+    background-color: #ff6a00; }
+
+/*===新闻详情===*/
+.sidebar-right article {
+  margin-top: 20px; }
+  .sidebar-right article .heading {
+    height: 36px;
+    line-height: 36px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #e8faff; }
+    .sidebar-right article .heading h3 {
+      width: calc(100% - 100px);
+      line-height: 36px;
+      font-size: 16px;
+      color: #333; }
+    .sidebar-right article .heading time {
+      width: 100px;
+      font-size: 16px;
+      color: #666; }
+  .sidebar-right article .article-content {
+    padding-top: 10px;
+    font-size: 14px;
+    color: #333; }
+    .sidebar-right article .article-content img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 15px auto 0; }
+      .sidebar-right article .article-content img + img {
+        margin-top: 8px; }
+      .sidebar-right article .article-content img + p, .sidebar-right article .article-content img + div {
+        margin-top: 10px; }
+      .sidebar-right article .article-content img + div div,
+      .sidebar-right article .article-content img + div p {
+        margin-top: 5px; }
+    .sidebar-right article .article-content p,
+    .sidebar-right article .article-content div {
+      line-height: 26px;
+      word-wrap: break-word;
+      margin-top: 10px; }
+    .sidebar-right article .article-content div > p,
+    .sidebar-right article .article-content div > div {
+      margin-top: 5px; }
+
 /*# sourceMappingURL=hongyan.css.map */
