@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>给我们留言 | 红焱科技</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="红焱科技,综合性金融支付解决方案">
+    <meta name="description" content="红焱科技,综合性金融支付解决方案">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/hongyan.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_rl93xazbonnopqfr.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_o9nt9lnz9pv6lxr.css">
 </head>
 <body>
     <header id="header">
@@ -39,7 +42,7 @@
         </nav>
     </header>
     <main id="main">
-        <div class="banner products-banner">
+        <div class="banner message-banner">
             <img src="images/contact-banner.png" alt="联系我们banner">
         </div>
         <div class="content-wrapper">
@@ -68,8 +71,26 @@
                 </nav>
                 <h2>给我们留言</h2>
                 <p>请提出您的宝贵意见和建议，我们会更好地提高，谢谢。</p>
-                <form action="">
-                    
+                <form action="" method="post" id="messageForm" class="message-form contact-form">
+                    <div class="name">
+                        <label for="name" class="required">姓名：</label>
+                        <input type="text" id="name" name="name" required placeholder="请输入姓名">
+                    </div>
+                    <div class="phone">
+                        <label for="phone">联系方式：</label>
+                        <input type="text" id="phone" name="phone" placeholder="请输入手机号码">
+                    </div>
+                    <div class="email">
+                        <label for="email">联系邮箱：</label>
+                        <input type="text" id="email" name="email" placeholder="请输入联系邮箱">
+                    </div>
+                    <div class="advise">
+                        <label for="advise" class="required">意见建议：</label>
+                        <textarea id="advise" name="advise" required placeholder="限制300个字"></textarea>
+                    </div>
+                    <div class="submit">
+                        <button type="submit" id="messageSubmit" class="message-submit" title="提交">提交</button>
+                    </div>
                 </form>
             </aside>
         </div>

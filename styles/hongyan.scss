@@ -237,34 +237,6 @@ section.our-advantage {
       }
     }
   }
-  .process {
-    margin-top: 40px;
-    @extend %clearfix;
-    li {
-      @extend %fl;
-      width: 25%;
-      padding: 98px calc((25% - 82px) / 2) 0;
-      font-size: $font-size;
-      color: $text-color;
-      line-height: 1.5;
-      text-align: center;
-      &:nth-of-type(1) {
-        background: url("../images/protocol.png") no-repeat center top,
-                    url("../images/next-step.png") no-repeat right top 30px;
-      }
-      &:nth-of-type(2) {
-        background: url("../images/audit.png") no-repeat center top,
-                    url("../images/next-step.png") no-repeat right top 30px;
-      }
-      &:nth-of-type(3) {
-        background: url("../images/write.png") no-repeat center top,
-                    url("../images/next-step.png") no-repeat right top 30px;
-      }
-      &:nth-of-type(4) {
-        background: url("../images/install.png") no-repeat center top;
-      }
-    }
-  }
   .handle {
     text-align: center;
     a {
@@ -279,6 +251,35 @@ section.our-advantage {
         color: $main-color;
         border-color: $main-color;
       }
+    }
+  }
+}
+
+.process {
+  margin-top: 40px;
+  @extend %clearfix;
+  li {
+    @extend %fl;
+    width: 25%;
+    padding: 98px calc((25% - 82px) / 2) 0;
+    font-size: $font-size;
+    color: $text-color;
+    line-height: 1.5;
+    text-align: center;
+    &:nth-of-type(1) {
+      background: url("../images/protocol.png") no-repeat center top,
+      url("../images/next-step.png") no-repeat right top 30px;
+    }
+    &:nth-of-type(2) {
+      background: url("../images/audit.png") no-repeat center top,
+      url("../images/next-step.png") no-repeat right top 30px;
+    }
+    &:nth-of-type(3) {
+      background: url("../images/write.png") no-repeat center top,
+      url("../images/next-step.png") no-repeat right top 30px;
+    }
+    &:nth-of-type(4) {
+      background: url("../images/install.png") no-repeat center top;
     }
   }
 }
@@ -642,7 +643,7 @@ section.news {
     > p {
       font-size: $font-size - 2;
       color: $text-color;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
   }
 }
@@ -683,57 +684,6 @@ section.news {
           left: 16px;
           font-size: 12px;
           transform: translateY(-50%);
-        }
-      }
-    }
-  }
-}
-/*面包屑导航*/
-.breadcrumbs {
-  $size: 50px;
-  position: relative;
-  height: $size;
-  line-height: $size;
-  margin-bottom: 20px;
-  ol {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: $size;
-    line-height: $size;
-    li {
-      position: relative;
-      display: inline-block;
-      height: $size;
-      line-height: $size;
-      padding-left: 20px;
-      color: $text-color;
-      &:first-child {
-        padding-left: 0;
-      }
-      &:last-child {
-        padding-left: 25px;
-        &:before {
-          content: "";
-        }
-      }
-      &:before {
-        content: ">";
-        position: absolute;
-        top: 0;
-        right: -18px;
-      }
-      a {
-        display: block;
-        color: #666;
-        padding-right: 5px;
-        padding-left: 5px;
-        &.icon-home {
-          font-size: 20px;
-          color: #999;
-        }
-        &:hover {
-          color: $main-color;
         }
       }
     }
@@ -977,7 +927,7 @@ section.news {
   position: relative;
   height: $size;
   line-height: $size;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   ol {
     position: absolute;
     top: 0;
@@ -1012,7 +962,7 @@ section.news {
         padding-right: 5px;
         padding-left: 5px;
         &.icon-home {
-          font-size: 20px;
+          font-size: 24px;
           color: #999;
         }
         &:hover {
@@ -1248,5 +1198,238 @@ h3.product-details {
     height: auto;
     margin-right: auto;
     margin-left: auto;
+  }
+}
+
+/*===给我们留言===*/
+.contact-form {
+  > div {
+    $width: 82px;
+    $height: 36px;
+    $border-radius: 2px;
+    $margin-right: 10px;
+    margin-bottom: 10px;
+    @extend %clearfix;
+    &.submit {
+      margin-top: 20px;
+    }
+    > label {
+      position: relative;
+      display: block;
+      @extend %fl;
+      width: $width;
+      height: $height;
+      line-height: $height;
+      margin-right: $margin-right;
+      padding-left: 12px;
+      font-size: $font-size - 2;
+      color: #333;
+      &.required {
+        &:before {
+          content: "*";
+          position: absolute;
+          left: 0;
+          font-size: $font-size;
+          color: $main-color;
+        }
+      }
+    }
+    > input,
+    > textarea {
+      display: block;
+      @extend %fl;
+      border: 1px solid #d4d4d4;
+      border-radius: $border-radius;
+      font-size: $font-size - 2;
+      color: #999;
+      padding-left: 1em;
+    }
+    > input {
+      width: 180px;
+      height: $height;
+      line-height: $height;
+    }
+    > textarea {
+      width: 620px;
+      max-width: 620px;
+      min-width: 500px;
+      max-height: 120px;
+      line-height: 18px;
+      padding: .7em 1em;
+      resize: none;
+    }
+    &.submit {
+      button {
+        display: block;
+        margin-left: $width + $margin-right;
+        width: 140px;
+        height: $height + 4;
+        line-height: $height + 4;
+        text-align: center;
+        background-color: $main-color;
+        color: #fff;
+        padding-left: .5em;
+        letter-spacing: .5em;
+        border-radius: $border-radius;
+        &:hover {
+          background-color: darken($main-color, 2%);
+        }
+      }
+    }
+  }
+}
+
+/*===招商加盟===*/
+.join-sidebar-right {
+  margin-bottom: 60px;
+}
+.know-join {
+  h3 {
+    font-size: $font-size;
+    color: #1b95df;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  > div {
+    margin-bottom: 20px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  > .condition {
+    ul {
+      li {
+        line-height: 26px;
+        color: $text-color;
+        font-size: $font-size - 2;
+        strong {
+          color: #151515;
+        }
+        ul {
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+  > .advantage {
+    p {
+      font-size: $font-size - 2;
+      color: $text-color;
+      line-height: 26px;
+      margin-bottom: 10px;
+      strong {
+        color: $main-color;
+      }
+    }
+    > strong {
+      font-size: $font-size;
+      color: $text-color;
+    }
+  }
+  > .to-join {
+    p {
+      font-size: $font-size - 2;
+      color: $text-color;
+      line-height: 26px;
+      margin-bottom: 20px;
+    }
+    .content {
+      font-size: 0;
+      span {
+        position: relative;
+        display: inline-block;
+        background-color: #ff7e00;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-right: 40px;
+        font-size: $font-size;
+        &:last-of-type {
+          margin-right: 0;
+        }
+        &:not(:last-of-type) {
+          &:after {
+            content: "+";
+            position: absolute;
+            top: 50%;
+            right: -27px;
+            transform: translateY(-50%);
+            font-size: $font-size + 4;
+            font-weight: 600;
+            color: #ccc;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*===加盟流程===*/
+.join-process {
+  .tips {
+    text-align: center;
+    margin-top: 20px;
+    font-size: $font-size - 2;
+    color: $text-color;
+  }
+}
+.datum {
+  margin-top: 60px;
+  .datum-info {
+    @extend %clearfix;
+    ul {
+      @extend %fl;
+      width: 40%;
+      &:nth-of-type(2n + 1) {
+        margin-right: 20%;
+      }
+      h3 {
+        margin-bottom: 22px;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 30px;
+        font-size: $font-size;
+        background-color: #1b95df;
+        color: #fff;
+      }
+      li {
+        line-height: 24px;
+        font-size: $font-size - 2;
+        color: $text-color;
+        margin-bottom: 6px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .tips {
+    text-align: center;
+    margin-top: 15px;
+    font-size: $font-size - 2;
+  }
+}
+.join-sidebar-right {
+  > .tips {
+    margin-top: 50px;
+    font-size: $font-size;
+    color: $text-color;
+    line-height: 1.5;
+  }
+}
+
+/*===加盟专线===*/
+.join-phone {
+  margin-bottom: 20px;
+  a {
+    color: #1b95df;
+    font-size: $font-size + 14;
+    margin-right: 30px;
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 }
